@@ -5,7 +5,6 @@ body {
   padding: 0;
 }
 
-/* Navbar */
 .navbar {
   background-color: #fff;
   padding: 15px 30px;
@@ -25,7 +24,6 @@ body {
   color: #000;
 }
 
-/* Konten Tengah */
 .main-content {
   text-align: center;
   padding: 50px 20px;
@@ -48,7 +46,6 @@ h1 {
   color: #000;
 }
 
-/* Tombol Canva */
 .canva-button {
   display: inline-block;
   margin-top: 30px;
