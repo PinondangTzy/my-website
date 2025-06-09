@@ -1,63 +1,66 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fffaf0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdf6e3;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation Bar */
+/* Navbar */
 .navbar {
-  background-color: #fefefe;
-  padding: 10px 20px;
+  background-color: #fff;
+  padding: 15px 30px;
   border-bottom: 2px solid #8b0000;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+  gap: 15px;
   font-weight: bold;
 }
 
 .navbar a {
-  text-decoration: none;
   color: #4b0082;
+  text-decoration: none;
 }
 
 .navbar span {
-  color: black;
-}
-
-/* Content Styling */
-.container {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-h1 {
-  font-size: 40px;
   color: #000;
 }
 
-h2 {
-  font-weight: normal;
-  margin-top: 10px;
+/* Konten Tengah */
+.main-content {
+  text-align: center;
+  padding: 50px 20px;
 }
 
-/* Canva link */
-.canva-link {
-  margin-top: 20px;
+h1 {
+  font-size: 42px;
+  color: #4169e1;
+  margin-bottom: 10px;
 }
 
-.canva-link a {
+.subtitle {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.greeting {
   font-size: 18px;
-  text-decoration: none;
-  background-color: #4b0082;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  margin-top: 10px;
+  color: #000;
+}
+
+/* Tombol Canva */
+.canva-button {
   display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: #4b0082;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
   transition: background-color 0.3s;
 }
 
-.canva-link a:hover {
+.canva-button:hover {
   background-color: #360060;
 }
