@@ -1,4 +1,4 @@
-# Website Sederhana
+# Bigetroopers
 
 Ini adalah website HTML sederhana dengan CSS dan JavaScript. Kamu bisa mengupload ini ke GitHub Pages untuk membuat website pribadi.
 
