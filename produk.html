@@ -4,6 +4,30 @@
   <meta charset="UTF-8">
   <title>Produk - BIGETROOPERS</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .option {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .option:hover {
+      background-color: #b2060f;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    #score {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,7 +74,90 @@
       Nama ini juga memberi identitas khusus bagi para penggemar Bigetron, sehingga mereka merasa menjadi bagian penting dari perjalanan dan kesuksesan tim.
     </p>
 
+    <hr style="margin: 40px 0;">
+    <h2>🎮 Tebak Fakta Bigetron</h2>
+    <p>Jawab pertanyaan seputar tim Bigetron Esports!</p>
+
+    <div id="question-box"></div>
+    <div id="options"></div>
+    <div id="result"></div>
+    <div id="score">Skor: 0</div>
   </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Apa nama divisi PUBG Mobile Bigetron yang terkenal?",
+        options: ["Bigetron Alpha", "Bigetron Red Aliens", "Bigetron Galaxy", "Bigetron Blaze"],
+        answer: "Bigetron Red Aliens"
+      },
+      {
+        question: "Siapa salah satu pemain legendaris Bigetron Red Aliens?",
+        options: ["Ryzen", "Tenshi", "Kenboo", "Microboy"],
+        answer: "Ryzen"
+      },
+      {
+        question: "Di tahun berapa Bigetron Esports didirikan?",
+        options: ["2015", "2017", "2018", "2016"],
+        answer: "2017"
+      },
+      {
+        question: "Apa warna khas dari logo Bigetron?",
+        options: ["Biru dan putih", "Merah dan putih", "Hitam dan emas", "Ungu dan abu-abu"],
+        answer: "Merah dan putih"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById("question-box").innerText = q.question;
+
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.innerText = option;
+        btn.onclick = () => checkAnswer(option);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const result = document.getElementById("result");
+      if (selected === questions[currentQuestion].answer) {
+        score++;
+        result.innerText = "✅ Benar!";
+      } else {
+        result.innerText = `❌ Salah! Jawaban benar: ${questions[currentQuestion].answer}`;
+      }
+      document.getElementById("score").innerText = `Skor: ${score}`;
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        setTimeout(() => {
+          result.innerText = "";
+          loadQuestion();
+        }, 1500);
+      } else {
+        setTimeout(() => {
+          showFinalResult();
+        }, 1500);
+      }
+    }
+
+    function showFinalResult() {
+      document.getElementById("question-box").innerText = "Permainan Selesai!";
+      document.getElementById("options").innerHTML = "";
+      document.getElementById("result").innerText = `Skor akhir kamu: ${score} dari ${questions.length}`;
+    }
+
+    loadQuestion();
+  </script>
 
 </body>
 </html>
