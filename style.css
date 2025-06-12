@@ -1,3 +1,4 @@
+/* ===== Styling Umum ===== */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fdf6e3;
@@ -99,4 +100,15 @@ h1 {
   font-size: 18px;
   color: #00008b;
 }
+
+.final-badge {
+  font-size: 26px;
+  color: #fff;
+  background-color: #4b0082;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  border-radius: 12px;
+}
+
 
